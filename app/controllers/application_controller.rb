@@ -6,23 +6,28 @@ class App < Sinatra::Base
 
 
     get '/' do 
-     
+        erb :'super_hero'
     end 
 
-
-
-
-
-
-
-
-
-
-
-    
     post '/teams' do 
-        #code for super hero objects 
+        @team_name = params[:team][:team_name]
+        @team_motto = params[:team][:team_motto]
 
+        @hero_1_name = params[:team][:hero_1][0][:name]
+        @hero_1_power = params[:team][:hero_1][0][:power]
+        @hero_1_bio = params[:team][:hero_1][0][:bio]
+
+        @hero_2_name = params[:team][:hero_2][0][:name]
+        @hero_2_power = params[:team][:hero_2][0][:power]
+        @hero_2_bio = params[:team][:hero_2][0][:bio]
+
+        @hero_3_name = params[:team][:hero_3][0][:name]
+        @hero_3_power = params[:team][:hero_3][0][:power]
+        @hero_3_bio = params[:team][:hero_3][0][:bio]
+
+
+        # binding.pry
+        erb :'team'
  
     end 
 
