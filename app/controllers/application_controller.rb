@@ -12,6 +12,7 @@ class App < Sinatra::Base
     post '/teams' do 
         @team_name = params[:team][:name]
         @team_motto = params[:team][:motto]
+        # @team_members = params[:team][:members]
 
         @hero_1_name = params[:team][:members][0][:name]
         @hero_1_power = params[:team][:members][0][:power]
@@ -24,8 +25,6 @@ class App < Sinatra::Base
         @hero_3_name = params[:team][:members][2][:name]
         @hero_3_power = params[:team][:members][2][:power]
         @hero_3_bio = params[:team][:members][2][:bio]
-
-
         # binding.pry
         erb :'team'
  
